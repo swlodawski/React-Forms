@@ -3,8 +3,8 @@ import './Form.css';
 
 
 function Form () {
-const [ firstName, setFirstName] = useState('');
-const [ lastName, setLastName] = useState('');
+    const [ firstName, setFirstName] = useState('');
+    const [ lastName, setLastName] = useState('');
 
 const handleChangeInput = (e) => {
     const {name, value} = e.target;
@@ -12,7 +12,7 @@ const handleChangeInput = (e) => {
     return name === 'firstName' ? setFirstName(value): setLastName(value);
 };
 
-handleFormSubmit = (e) => {
+const handleFormSubmit = (e) => {
     e.preventDefault();
 
     alert(`Hello ${firstName} ${lastName}`);
@@ -20,7 +20,6 @@ handleFormSubmit = (e) => {
     setLastName('');
 };
     return(
-        <>
         <div className="container text-center">
             <h1>Hello ${firstName} {lastName}</h1>
             <form className="form" onSubmit={handleFormSubmit}>
@@ -41,7 +40,7 @@ handleFormSubmit = (e) => {
                     Submit</button>
                     </form>
                     </div>
-                    </>
+    
     );
 }
 
